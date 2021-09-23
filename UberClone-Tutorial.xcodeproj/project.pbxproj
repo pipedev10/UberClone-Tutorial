@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		911C534426F3F5A100415646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C534326F3F5A100415646 /* AppDelegate.swift */; };
 		911C534626F3F5A100415646 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C534526F3F5A100415646 /* SceneDelegate.swift */; };
-		911C534826F3F5A100415646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C534726F3F5A100415646 /* ViewController.swift */; };
 		911C534B26F3F5A100415646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911C534926F3F5A100415646 /* Main.storyboard */; };
 		911C534D26F3F5A400415646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 911C534C26F3F5A400415646 /* Assets.xcassets */; };
 		911C535026F3F5A400415646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911C534E26F3F5A400415646 /* LaunchScreen.storyboard */; };
+		911C535D26F3F6D500415646 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C535C26F3F6D500415646 /* LoginController.swift */; };
+		911C535F26F3FBBF00415646 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C535E26F3FBBF00415646 /* Extensions.swift */; };
+		91EF5B1926FD2B5400469323 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EF5B1826FD2B5400469323 /* SignUpController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		911C534026F3F5A100415646 /* UberClone-Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UberClone-Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		911C534326F3F5A100415646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		911C534526F3F5A100415646 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		911C534726F3F5A100415646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		911C534A26F3F5A100415646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		911C534C26F3F5A400415646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		911C534F26F3F5A400415646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		911C535126F3F5A400415646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		911C535C26F3F6D500415646 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		911C535E26F3FBBF00415646 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		91EF5B1826FD2B5400469323 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		911C534226F3F5A100415646 /* UberClone-Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				911C535B26F3F5F000415646 /* Model */,
+				911C535A26F3F5ED00415646 /* View */,
+				911C535926F3F5E100415646 /* Controller */,
+				911C535826F3F5DE00415646 /* Service */,
+				911C535726F3F5DB00415646 /* Utils */,
 				911C534326F3F5A100415646 /* AppDelegate.swift */,
 				911C534526F3F5A100415646 /* SceneDelegate.swift */,
-				911C534726F3F5A100415646 /* ViewController.swift */,
 				911C534926F3F5A100415646 /* Main.storyboard */,
 				911C534C26F3F5A400415646 /* Assets.xcassets */,
 				911C534E26F3F5A400415646 /* LaunchScreen.storyboard */,
 				911C535126F3F5A400415646 /* Info.plist */,
 			);
 			path = "UberClone-Tutorial";
+			sourceTree = "<group>";
+		};
+		911C535726F3F5DB00415646 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				911C535E26F3FBBF00415646 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		911C535826F3F5DE00415646 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		911C535926F3F5E100415646 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				911C535C26F3F6D500415646 /* LoginController.swift */,
+				91EF5B1826FD2B5400469323 /* SignUpController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		911C535A26F3F5ED00415646 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		911C535B26F3F5F000415646 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				911C534826F3F5A100415646 /* ViewController.swift in Sources */,
+				91EF5B1926FD2B5400469323 /* SignUpController.swift in Sources */,
+				911C535D26F3F6D500415646 /* LoginController.swift in Sources */,
 				911C534426F3F5A100415646 /* AppDelegate.swift in Sources */,
 				911C534626F3F5A100415646 /* SceneDelegate.swift in Sources */,
+				911C535F26F3FBBF00415646 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipe.UberClone-Tutorial";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipe.UberClone-Tutorial";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
