@@ -25,7 +25,6 @@ class LoginController: UIViewController {
         return view
     }()
     
-    
     private lazy var passwordContainerView: UIView = {
         let view = UIView().inputContainerView(image: UIImage(named: "ic_lock_outline_white_2x")!, textField: passwordTextField)
         view.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -40,13 +39,9 @@ class LoginController: UIViewController {
         return UITextField().textField(withPlaceHolder: "Password", isSecureTextEntry: true)
     }()
     
-    private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
+    private let loginButton: AuthButton = {
+        let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
-        button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
-        button.backgroundColor = .mainBlueTint
-        button.layer.cornerRadius = 5
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
@@ -85,9 +80,9 @@ class LoginController: UIViewController {
         
         view.addSubview(titleLabel)
         /*
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
          replace with code down
          */
         
