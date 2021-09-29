@@ -81,10 +81,8 @@ class LoginController: UIViewController {
                 print("There was an error in login \(error.localizedDescription)")
                 return
             }
-            
             print("successfully logged user in...")
         }
-        print("12232")
     }
     
     // MARK: - Helper Functions
