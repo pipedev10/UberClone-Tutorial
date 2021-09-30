@@ -114,7 +114,13 @@ class SignUpController: UIViewController {
             let values = ["email": email, "fullname": fullname, "accountType": accountTypeIndex] as [String : Any]
             
             Database.database().reference().child("users").child(uid).updateChildValues(values,withCompletionBlock: { (error, ref) in
-                print("Successfully registered user and saved data..")
+                DispatchQueue.main.async {
+                    let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+                    if let homeController = keyWindow?.rootViewController as? HomeController {
+                        homeController.configureUI() // maybe you have a different signature
+                    }
+                    self.dismiss(animated: true, completion: nil)
+                }
             })
         }
          
