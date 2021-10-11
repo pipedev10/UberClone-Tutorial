@@ -21,7 +21,7 @@ class HomeController: UIViewController {
     private let inputActivationView = LocationInputActivationView()
     private let locationInputView = LocationInputView()
     private let tableView = UITableView()
-    
+
     private final let locationInputViewHeight: CGFloat = 200
     
     
@@ -31,10 +31,15 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
         enableLocationServices()
+        fetchUserData()
         //signOut()
     }
     
     // MARK: - API
+    
+    func fetchUserData() {
+        Service.shared.fetchUserData()
+    }
     
     func checkIfUserIsLoggedIn(){
         if Auth.auth().currentUser?.uid == nil {
