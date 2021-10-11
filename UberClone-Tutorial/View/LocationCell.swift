@@ -13,9 +13,16 @@ class LocationCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "UBER"
-        label.font = UIFont(name: "Avenir-Light", size: 36)
-        label.textColor = UIColor(white: 1, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "123 Main Street"
+        return label
+    }()
+    
+    private let addressLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .lightGray
+        label.text = "123 Main Street, Washington, DC"
         return label
     }()
     
@@ -23,6 +30,17 @@ class LocationCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        selectionStyle = .none
+        
+        let stack = UIStackView(arrangedSubviews: [titleLabel, addressLabel])
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 4
+        
+        addSubview(stack)
+        stack.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
+        
     }
     
     required init?(coder: NSCoder) {
