@@ -21,6 +21,7 @@
 		91644C5A2714E18F00CADACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91644C592714E18F00CADACC /* User.swift */; };
 		9185164F270BCFCA00F5939C /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185164E270BCFCA00F5939C /* LocationInputActivationView.swift */; };
 		91851651270BDDBE00F5939C /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91851650270BDDBE00F5939C /* LocationInputView.swift */; };
+		91BE8C63271B97F200B7169F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE8C62271B97F200B7169F /* LocationHandler.swift */; };
 		91BEA6DE27052E3E0019D7DB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BEA6DD27052E3E0019D7DB /* HomeController.swift */; };
 		91EF5B1926FD2B5400469323 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EF5B1826FD2B5400469323 /* SignUpController.swift */; };
 		91EF5B1B26FD3A2700469323 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EF5B1A26FD3A2700469323 /* AuthButton.swift */; };
@@ -45,6 +46,7 @@
 		91644C592714E18F00CADACC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9185164E270BCFCA00F5939C /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		91851650270BDDBE00F5939C /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		91BE8C62271B97F200B7169F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		91BEA6DD27052E3E0019D7DB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		91EF5B1826FD2B5400469323 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		91EF5B1A26FD3A2700469323 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				911C535E26F3FBBF00415646 /* Extensions.swift */,
+				91BE8C62271B97F200B7169F /* LocationHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				911C535D26F3F6D500415646 /* LoginController.swift in Sources */,
 				911C534426F3F5A100415646 /* AppDelegate.swift in Sources */,
 				91644C562714A6FE00CADACC /* LocationCell.swift in Sources */,
+				91BE8C63271B97F200B7169F /* LocationHandler.swift in Sources */,
 				911C534626F3F5A100415646 /* SceneDelegate.swift in Sources */,
 				91644C5A2714E18F00CADACC /* User.swift in Sources */,
 				91644C582714D42800CADACC /* Service.swift in Sources */,
