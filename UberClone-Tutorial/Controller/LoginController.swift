@@ -85,7 +85,7 @@ class LoginController: UIViewController {
             DispatchQueue.main.async {
                 let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
                 if let homeController = keyWindow?.rootViewController as? HomeController {
-                    homeController.configureUI() // maybe you have a different signature
+                    homeController.configure() // maybe you have a different signature
                 }
                 self.dismiss(animated: true, completion: nil)
             }
