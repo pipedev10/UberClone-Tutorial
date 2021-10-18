@@ -63,11 +63,15 @@ class HomeController: UIViewController {
         case .showMenu:
             print("DEBUG: Handle show menu..")
         case .dismissActionView:
-            print("DEBUG: Handle dismissal..")
+            mapView.annotations.forEach { (annotation) in
+                if let anno = annotation as? MKPointAnnotation {
+                    mapView.removeAnnotation(anno)
+                }
+            }
+            
             UIView.animate(withDuration: 0.3) {
                 self.inputActivationView.alpha = 1
-                self.actionButton.setImage(UIImage(named: "baseline_menu_black_36dp")?.withRenderingMode(.alwaysOriginal), for: .normal)
-                self.actionButtonConfig = .showMenu
+                self.configureActionButton(config: .showMenu)
             }
         }
     }
@@ -135,6 +139,17 @@ class HomeController: UIViewController {
         configureUI()
         fetchUserData()
         fetchDrivers()
+    }
+    
+    fileprivate func configureActionButton(config: ActionButtonConfiguration){
+        switch config {
+        case .showMenu:
+            self.actionButton.setImage(UIImage(named: "baseline_menu_black_36dp")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            self.actionButtonConfig = .showMenu
+        case .dismissActionView:
+            actionButton.setImage(UIImage(named: "baseline_arrow_back_black_36dp")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            actionButtonConfig = .dismissActionView
+        }
     }
     
     func configureUI(){
@@ -325,8 +340,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedPlacemark = searchResults[indexPath.row]
         
-        actionButton.setImage(UIImage(named: "baseline_arrow_back_black_36dp")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        actionButtonConfig = .dismissActionView
+        configureActionButton(config: .dismissActionView)
         
         dismisslocationView { _ in
             let annotation = MKPointAnnotation()
