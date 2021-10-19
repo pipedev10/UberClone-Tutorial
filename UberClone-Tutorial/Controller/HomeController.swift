@@ -29,6 +29,7 @@ class HomeController: UIViewController {
     private let locationManager = LocationHandler.shared.locationManager
     
     private let inputActivationView = LocationInputActivationView()
+    private let rideActionView = RideActionView()
     private let locationInputView = LocationInputView()
     private let tableView = UITableView()
     private var searchResults = [MKPlacemark]()
@@ -153,6 +154,7 @@ class HomeController: UIViewController {
     
     func configureUI(){
         configureMapView()
+        configureRideActionView()
         
         view.addSubview(actionButton)
         actionButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
@@ -196,6 +198,12 @@ class HomeController: UIViewController {
             })
             
         }
+    }
+    
+    func configureRideActionView(){
+        view.addSubview(rideActionView)
+        rideActionView.frame = CGRect(x: 0, y: view.frame.height - 300,
+                                      width: view.frame.width, height: 300)
     }
     
     func configureTableView() {
