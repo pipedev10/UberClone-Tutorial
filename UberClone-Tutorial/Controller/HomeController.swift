@@ -413,8 +413,8 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
             self.mapView.selectAnnotation(annotation, animated: true)
         
             let annotations = self.mapView.annotations.filter({ !$0.isKind(of: DriverAnnotation.self)})
-            self.mapView.showAnnotations(annotations, animated: true)
-            
+            //self.mapView.showAnnotations(annotations, animated: true)
+            self.mapView.ZoomToFit(annotations: annotations)
             self.animateRideActionView(shouldShow: true, destination: selectedPlacemark)
         }
     }
