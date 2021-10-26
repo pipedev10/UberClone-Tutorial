@@ -48,7 +48,8 @@ struct Service {
         let destionationArray = [destinationCoordinates.latitude, destinationCoordinates.longitude]
         
         let values = ["pickupCoordinates": pickupArray,
-                      "destinationCoordinates": destionationArray]
+                      "destinationCoordinates": destionationArray,
+                      "state": TripState.requested.rawValue] as [String : Any]
         
         REF_TRIPS.child(uid).updateChildValues(values, withCompletionBlock: completion)
     }
