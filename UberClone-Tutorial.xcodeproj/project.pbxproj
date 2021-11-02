@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C41922CAFE15666E89E9B20 /* Pods_UberClone_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACAA1AC76F435F513B45696 /* Pods_UberClone_Tutorial.framework */; };
+		910C58682731E5CD00807B4D /* PickupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910C58672731E5CD00807B4D /* PickupController.swift */; };
 		911C534426F3F5A100415646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C534326F3F5A100415646 /* AppDelegate.swift */; };
 		911C534626F3F5A100415646 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C534526F3F5A100415646 /* SceneDelegate.swift */; };
 		911C534B26F3F5A100415646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911C534926F3F5A100415646 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		1ACAA1AC76F435F513B45696 /* Pods_UberClone_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UberClone_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39EB6386F677A3EF764DD256 /* Pods-UberClone-Tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone-Tutorial.debug.xcconfig"; path = "Target Support Files/Pods-UberClone-Tutorial/Pods-UberClone-Tutorial.debug.xcconfig"; sourceTree = "<group>"; };
 		5035632188D7DBA7458ADEA8 /* Pods-UberClone-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone-Tutorial.release.xcconfig"; path = "Target Support Files/Pods-UberClone-Tutorial/Pods-UberClone-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
+		910C58672731E5CD00807B4D /* PickupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupController.swift; sourceTree = "<group>"; };
 		911C534026F3F5A100415646 /* UberClone-Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UberClone-Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		911C534326F3F5A100415646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		911C534526F3F5A100415646 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				911C535C26F3F6D500415646 /* LoginController.swift */,
 				91EF5B1826FD2B5400469323 /* SignUpController.swift */,
 				91BEA6DD27052E3E0019D7DB /* HomeController.swift */,
+				910C58672731E5CD00807B4D /* PickupController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				91BEA6DE27052E3E0019D7DB /* HomeController.swift in Sources */,
 				91851651270BDDBE00F5939C /* LocationInputView.swift in Sources */,
 				91482D122728BD0700BCF0F7 /* Trip.swift in Sources */,
+				910C58682731E5CD00807B4D /* PickupController.swift in Sources */,
 				91BE8C65271BB43100B7169F /* DriverAnnotation.swift in Sources */,
 				911C535D26F3F6D500415646 /* LoginController.swift in Sources */,
 				911C534426F3F5A100415646 /* AppDelegate.swift in Sources */,
