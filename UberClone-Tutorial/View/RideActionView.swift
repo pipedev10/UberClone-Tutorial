@@ -60,6 +60,7 @@ class RideActionView: UIView {
     var config = RideActionViewConfiguration()
     var buttonAction = ButtonAction()
     weak var delegate: RideActionViewDelegate?
+    var user: User?
     
     private let titleLabel: UILabel = {
        let label = UILabel()
@@ -163,11 +164,21 @@ class RideActionView: UIView {
     func configureUI(withConfiguration config: RideActionViewConfiguration){
         switch config {
         case .requestRide:
+            buttonAction = .requestRide
+            actionButton.setTitle(buttonAction.description, for: .normal)
             break
         case .tripAccepted:
-            titleLabel.text = "En Route To Passenger"
-            buttonAction = .getDirections
-            actionButton.setTitle(buttonAction.description, for: .normal)
+            guard let user = user else { return }
+
+            if user.accountType == .passenger {
+                titleLabel.text = "En Route To Passenger"
+                buttonAction = .getDirections
+                actionButton.setTitle(buttonAction.description, for: .normal)
+            }else{
+                titleLabel.text = "Driver En Route"
+                buttonAction = .cancel
+                actionButton.setTitle(buttonAction.description, for: .normal)
+            }
         case .pickupPassenger:
             break
         case .tripInProgress:
