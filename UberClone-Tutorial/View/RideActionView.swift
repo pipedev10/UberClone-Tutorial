@@ -64,7 +64,6 @@ class RideActionView: UIView {
     private let titleLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "Test Address Title"
         label.textAlignment = .center
         return label
     }()
@@ -73,7 +72,6 @@ class RideActionView: UIView {
         let label = UILabel()
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "123 M St, NW Washington DC"
         label.textAlignment = .center
         return label
     }()
@@ -96,7 +94,7 @@ class RideActionView: UIView {
     
     private let uberXLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .lightGray
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18)
         label.text = "Uber X"
         label.textAlignment = .center
@@ -163,6 +161,19 @@ class RideActionView: UIView {
     // MARK: - Helper Functions
     
     func configureUI(withConfiguration config: RideActionViewConfiguration){
-        
+        switch config {
+        case .requestRide:
+            break
+        case .tripAccepted:
+            titleLabel.text = "En Route To Passenger"
+            buttonAction = .getDirections
+            actionButton.setTitle(buttonAction.description, for: .normal)
+        case .pickupPassenger:
+            break
+        case .tripInProgress:
+            break
+        case .endTrip:
+            break
+        }
     }
 }
