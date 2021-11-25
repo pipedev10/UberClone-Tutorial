@@ -503,6 +503,18 @@ extension HomeController: RideActionViewDelegate {
             }
         }
     }
+    
+    func cancelTrip() {
+        Service.shared.cancelTrip { (error, ref) in
+            if let error = error {
+                print("DEBUG: Error deleting trip..")
+                return
+            }
+            
+            self.animateRideActionView(shouldShow: false)
+        }
+    }
+    
 }
 
 // MARK: - PickupControllerDelegate
