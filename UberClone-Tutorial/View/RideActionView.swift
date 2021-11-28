@@ -16,6 +16,7 @@ protocol RideActionViewDelegate: AnyObject {
 enum RideActionViewConfiguration {
     case requestRide
     case tripAccepted
+    case driverArrived
     case pickupPassenger
     case tripInProgress
     case endTrip
@@ -186,7 +187,6 @@ class RideActionView: UIView {
         case .requestRide:
             buttonAction = .requestRide
             actionButton.setTitle(buttonAction.description, for: .normal)
-            break
         case .tripAccepted:
             guard let user = user else { return }
 
@@ -203,6 +203,14 @@ class RideActionView: UIView {
             infoViewLabel.text = String(user.fullname.first ?? "X")
             uberInfoLabel.text = user.fullname
             
+        case .driverArrived:
+            guard let user = user else { return }
+            
+            if user.accountType == .driver {
+                titleLabel.text = "Driver has arrived"
+                addressLabel.text = "Please meet driver pickup location"
+            }
+
         case .pickupPassenger:
             titleLabel.text = "Arrive At Passenger Location"
             buttonAction = .pickup
