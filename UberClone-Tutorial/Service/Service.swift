@@ -32,11 +32,11 @@ struct Service {
         
         REF_DRIVER_LOCATIONS.observe(.value) { (snapshot) in
             geofire.query(at: location, withRadius: 50).observe(.keyEntered, with: { (uid, location) in
-                self.fetchUserData(uid: uid) { (user) in
+                self.fetchUserData(uid: uid, completion: { (user) in
                     var driver = user
                     driver.location = location
                     completion(driver)
-                }
+                })
             })
         }
     }
