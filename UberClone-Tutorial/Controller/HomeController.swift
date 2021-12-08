@@ -26,7 +26,7 @@ private enum AnnotationType: String {
     case destination
 }
 
-protocol HomeControllerDelegate: class {
+protocol HomeControllerDelegate: AnyObject {
     func handleMenuToggle()
 }
 
@@ -49,9 +49,10 @@ class HomeController: UIViewController {
     
     weak var delegate: HomeControllerDelegate?
     
-    private var user: User? {
+    var user: User? {
         didSet {
             locationInputView.user = user
+            
             if user?.accountType == .passenger {
                 fetchDrivers()
                 configureLocationInputActivationView()
