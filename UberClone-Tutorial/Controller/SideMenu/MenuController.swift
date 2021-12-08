@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "MenuCell"
 
-private enum MenuOptions: Int, CaseIterable, CustomStringConvertible {
+enum MenuOptions: Int, CaseIterable, CustomStringConvertible {
     case yourTrips = 0
     case settings
     case logout
@@ -21,6 +21,10 @@ private enum MenuOptions: Int, CaseIterable, CustomStringConvertible {
         case .logout: return "Log out"
         }
     }
+}
+
+protocol MenuControllerDelegate: AnyObject {
+    func didSelect(option: MenuOptions)
 }
 
 class MenuController: UITableViewController {
@@ -37,6 +41,8 @@ class MenuController: UITableViewController {
         let view = MenuHeader(user: user, frame: frame)
         return view
     }()
+    
+    weak var delegate: MenuControllerDelegate?
     
     // MARK: - LifeCycle
     
@@ -68,6 +74,8 @@ class MenuController: UITableViewController {
     }
 }
 
+// MARK: - UITableViewDelegate/Datasource
+
 extension MenuController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MenuOptions.allCases.count
@@ -80,5 +88,11 @@ extension MenuController {
         cell.textLabel?.text = option.description
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let option = MenuOptions(rawValue: indexPath.row) else { return }
+        print("DEBUG: option is \(option.description)")
+        delegate?.didSelect(option: option)
     }
 }
