@@ -135,8 +135,8 @@ class SignUpController: UIViewController {
         REF_USERS.child(uid).updateChildValues(values,withCompletionBlock: { (error, ref) in
             DispatchQueue.main.async {
                 let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-                if let homeController = keyWindow?.rootViewController as? HomeController {
-                    homeController.configure() // maybe you have a different signature
+                if let controller = keyWindow?.rootViewController as? ContainerController {
+                    controller.configure() // maybe you have a different signature
                 }
                 self.dismiss(animated: true, completion: nil)
             }
