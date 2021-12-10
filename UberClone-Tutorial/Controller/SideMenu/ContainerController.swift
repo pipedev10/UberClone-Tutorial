@@ -164,7 +164,10 @@ extension ContainerController: MenuControllerDelegate {
             case .yourTrips:
                 break
             case .settings:
-                break
+                guard let user = self.user else { return }
+                let controller = SettingsController(user: user)
+                let nav = UINavigationController(rootViewController: controller)
+                self.present(nav, animated: true, completion: nil)
             case .logout:
                 let alert = UIAlertController(title: nil, message: "Are you want to log out?", preferredStyle: .actionSheet)
                 
