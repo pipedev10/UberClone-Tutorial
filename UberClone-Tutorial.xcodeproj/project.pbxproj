@@ -22,6 +22,8 @@
 		91644C582714D42800CADACC /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91644C572714D42800CADACC /* Service.swift */; };
 		91644C5A2714E18F00CADACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91644C592714E18F00CADACC /* User.swift */; };
 		91715A65271E44B8006B6E7A /* RideActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91715A64271E44B8006B6E7A /* RideActionView.swift */; };
+		917401A82763ED460030C33D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917401A72763ED460030C33D /* SettingsController.swift */; };
+		917401AA2763F13F0030C33D /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917401A92763F13F0030C33D /* UserInfoHeader.swift */; };
 		9185164F270BCFCA00F5939C /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185164E270BCFCA00F5939C /* LocationInputActivationView.swift */; };
 		91851651270BDDBE00F5939C /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91851650270BDDBE00F5939C /* LocationInputView.swift */; };
 		9198EF52275AAF0F0066108A /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9198EF51275AAF0F0066108A /* MenuController.swift */; };
@@ -54,6 +56,8 @@
 		91644C572714D42800CADACC /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		91644C592714E18F00CADACC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91715A64271E44B8006B6E7A /* RideActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideActionView.swift; sourceTree = "<group>"; };
+		917401A72763ED460030C33D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		917401A92763F13F0030C33D /* UserInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 		9185164E270BCFCA00F5939C /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		91851650270BDDBE00F5939C /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		9198EF51275AAF0F0066108A /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				9198EF4F275AAE9E0066108A /* Authentication */,
 				91BEA6DD27052E3E0019D7DB /* HomeController.swift */,
 				910C58672731E5CD00807B4D /* PickupController.swift */,
+				917401A72763ED460030C33D /* SettingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				91644C552714A6FE00CADACC /* LocationCell.swift */,
 				91715A64271E44B8006B6E7A /* RideActionView.swift */,
 				9198EF55275EC6760066108A /* MenuHeader.swift */,
+				917401A92763F13F0030C33D /* UserInfoHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +325,8 @@
 				91EF5B1926FD2B5400469323 /* SignUpController.swift in Sources */,
 				91EF5B1B26FD3A2700469323 /* AuthButton.swift in Sources */,
 				91BEA6DE27052E3E0019D7DB /* HomeController.swift in Sources */,
+				917401AA2763F13F0030C33D /* UserInfoHeader.swift in Sources */,
+				917401A82763ED460030C33D /* SettingsController.swift in Sources */,
 				91851651270BDDBE00F5939C /* LocationInputView.swift in Sources */,
 				91482D122728BD0700BCF0F7 /* Trip.swift in Sources */,
 				910C58682731E5CD00807B4D /* PickupController.swift in Sources */,
