@@ -33,6 +33,7 @@ class SettingsController: UITableViewController {
     // MARK: - Properties
     
     private let user: User
+    private let locationManager = LocationHandler.shared.locationManager
     
     private lazy var infoHeader: UserInfoHeader = {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 100)
@@ -71,14 +72,15 @@ class SettingsController: UITableViewController {
         tableView.register(LocationCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.backgroundColor = .white
         tableView.tableHeaderView = infoHeader
+        tableView.tableFooterView = UIView()
     }
     
     func configureNavigationBar(){
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barStyle = .black
+        //navigationController?.navigationBar.isTranslucent = false
+        //navigationController?.navigationBar.barStyle = .black
         navigationItem.title = "Settings"
-        navigationController?.navigationBar.barTintColor = .backgroundColor
+        //navigationController?.navigationBar.barTintColor = .backgroundColor
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "baseline_menu_black_36dp")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismissal))
     }
 }
@@ -119,6 +121,9 @@ extension SettingsController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let type = LocationType(rawValue: indexPath.row) else { return }
-        print("DEBUG: Type is \(type.description)")
+        guard let location = locationManager?.location else { return }
+        let controller = AddLocationController(type: type, location: location)
+        let nav = UINavigationController(rootViewController: controller)
+        present(nav, animated: true, completion: nil)
     }
 }

@@ -32,6 +32,7 @@
 		91BE8C63271B97F200B7169F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE8C62271B97F200B7169F /* LocationHandler.swift */; };
 		91BE8C65271BB43100B7169F /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE8C64271BB43100B7169F /* DriverAnnotation.swift */; };
 		91BEA6DE27052E3E0019D7DB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BEA6DD27052E3E0019D7DB /* HomeController.swift */; };
+		91D36F28276952B100385F40 /* AddLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D36F27276952B100385F40 /* AddLocationController.swift */; };
 		91EF5B1926FD2B5400469323 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EF5B1826FD2B5400469323 /* SignUpController.swift */; };
 		91EF5B1B26FD3A2700469323 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EF5B1A26FD3A2700469323 /* AuthButton.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		91BE8C62271B97F200B7169F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		91BE8C64271BB43100B7169F /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		91BEA6DD27052E3E0019D7DB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		91D36F27276952B100385F40 /* AddLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationController.swift; sourceTree = "<group>"; };
 		91EF5B1826FD2B5400469323 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		91EF5B1A26FD3A2700469323 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,11 +158,11 @@
 		911C535926F3F5E100415646 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				91D36F26276951C700385F40 /* Settings */,
 				9198EF50275AAEF30066108A /* SideMenu */,
 				9198EF4F275AAE9E0066108A /* Authentication */,
 				91BEA6DD27052E3E0019D7DB /* HomeController.swift */,
 				910C58672731E5CD00807B4D /* PickupController.swift */,
-				917401A72763ED460030C33D /* SettingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +207,15 @@
 				9198EF53275AAF2F0066108A /* ContainerController.swift */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		91D36F26276951C700385F40 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				917401A72763ED460030C33D /* SettingsController.swift */,
+				91D36F27276952B100385F40 /* AddLocationController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 				91BE8C65271BB43100B7169F /* DriverAnnotation.swift in Sources */,
 				911C535D26F3F6D500415646 /* LoginController.swift in Sources */,
 				911C534426F3F5A100415646 /* AppDelegate.swift in Sources */,
+				91D36F28276952B100385F40 /* AddLocationController.swift in Sources */,
 				91644C562714A6FE00CADACC /* LocationCell.swift in Sources */,
 				9198EF52275AAF0F0066108A /* MenuController.swift in Sources */,
 				91BE8C63271B97F200B7169F /* LocationHandler.swift in Sources */,
