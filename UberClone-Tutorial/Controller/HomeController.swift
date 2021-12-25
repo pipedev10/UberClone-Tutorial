@@ -42,7 +42,7 @@ class HomeController: UIViewController {
     private let locationInputView = LocationInputView()
     private let tableView = UITableView()
     private var searchResults = [MKPlacemark]()
-    private var savedLocation = [MKPlacemark]()
+    private var savedLocations = [MKPlacemark]()
     private final let locationInputViewHeight: CGFloat = 200
     private final let rideActionViewHeight: CGFloat = 300
     private var actionButtonConfig = ActionButtonConfiguration()
@@ -237,6 +237,7 @@ class HomeController: UIViewController {
     
     func configureSavedLocations(){
         guard let user = user else { return }
+        savedLocations.removeAll()
 
         if let homeLocation = user.homeLocation {
             geocodeAddressString(address: homeLocation)
@@ -252,7 +253,7 @@ class HomeController: UIViewController {
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             guard let clPlacemark = placemarks?.first else { return }
             let placemark = MKPlacemark(placemark: clPlacemark)
-            self.savedLocation.append(placemark)
+            self.savedLocations.append(placemark)
             self.tableView.reloadData()
         }
     }
@@ -570,14 +571,14 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? savedLocation.count : searchResults.count
+        return section == 0 ? savedLocations.count : searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
         
         if indexPath.section == 0 {
-            cell.placemark = savedLocation[indexPath.row]
+            cell.placemark = savedLocations[indexPath.row]
         }
         
         if indexPath.section == 1 {
@@ -587,8 +588,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedPlacemark = searchResults[indexPath.row]
-        
+        let selectedPlacemark = indexPath.section == 0 ? savedLocations[indexPath.row] : searchResults[indexPath.row]
         
         configureActionButton(config: .dismissActionView)
         let destination = MKMapItem(placemark: selectedPlacemark)
